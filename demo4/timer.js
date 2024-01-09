@@ -4,8 +4,11 @@ class Timer extends React.Component {
     this.state = { seconds: 0 };
   }
 
+  // Create a `tick` function
   tick() {
-    
+    this.setState(state => ({
+      seconds: state.seconds + 1
+    }));
   }
 
   componentDidMount() {
