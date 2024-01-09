@@ -1,7 +1,4 @@
-// Use `npm` to install `react` and `reactDOM`, so you can use them in the component.
-// It would still work if you set up React using CDN in the `.html` file.
-const React = require('react');
-const ReactDOM = require('react-dom');
+// Use `npm` to install `react` and `reactDOM` ahead.
 
 // Create a class called `HelloMessage`.
 class HelloMessage extends React.Component {
@@ -9,11 +6,12 @@ class HelloMessage extends React.Component {
         return React.createElement(
             "div",
             null,
-            "Hello ",
-            this.props.name
+            `Hello ${this.props.name}!`  // "Westcliff"
         );
     }
 }
 
-// Ask reactDOM to create an element HelloMessage, named "Westcliff", and then find `id="hello-example"` to display it.
+// Ask reactDOM to create an element HelloMessage,
+// which has an attribute "name" with value "Westcliff",
+// and then find `id="hello-example"` to display it.
 ReactDOM.render(React.createElement(HelloMessage, { name: "Westcliff" }), document.getElementById('hello-example'));
